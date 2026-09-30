@@ -1,0 +1,576 @@
+/* ============================================================
+   GENERAL
+============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8fafc
+        );
+
+    color: #1e293b;
+
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   MAIN APPLICATION
+============================================================ */
+
+.app-container {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: white;
+
+    box-shadow:
+        0 0 30px rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 22px 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3730a3,
+            #4f46e5
+        );
+
+    color: white;
+}
+
+.header-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.15
+    );
+
+    border-radius: 14px;
+
+    font-size: 28px;
+}
+
+.header h1 {
+
+    margin: 0;
+
+    font-size: 25px;
+}
+
+.header p {
+
+    margin: 4px 0 0;
+
+    opacity: 0.9;
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   CHAT CONTAINER
+============================================================ */
+
+.chat-container {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+}
+
+.chat-messages {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 28px;
+
+    min-height: 500px;
+
+    max-height: calc(
+        100vh - 230px
+    );
+}
+
+
+/* ============================================================
+   MESSAGE
+============================================================ */
+
+.message {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    animation:
+        messageAppear
+        0.25s
+        ease;
+}
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================================
+   AVATAR
+============================================================ */
+
+.avatar {
+
+    width: 38px;
+
+    height: 38px;
+
+    min-width: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* ============================================================
+   AI MESSAGE
+============================================================ */
+
+.ai-message .avatar {
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+}
+
+.ai-message .message-content {
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 15px 18px;
+
+    max-width: 82%;
+}
+
+
+/* ============================================================
+   USER MESSAGE
+============================================================ */
+
+.user-message {
+
+    justify-content: flex-end;
+}
+
+.user-message .avatar {
+
+    order: 2;
+
+    background: #4f46e5;
+
+    color: white;
+}
+
+.user-message .message-content {
+
+    order: 1;
+
+    background: #4f46e5;
+
+    color: white;
+
+    border-radius: 14px;
+
+    padding: 15px 18px;
+
+    max-width: 75%;
+}
+
+
+/* ============================================================
+   MESSAGE TEXT
+============================================================ */
+
+.message-name {
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+
+    color: #4f46e5;
+}
+
+.user-message .message-name {
+
+    color: white;
+}
+
+.message-text {
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    white-space: normal;
+
+    word-wrap: break-word;
+}
+
+.message-text p {
+
+    margin-top: 0;
+
+    margin-bottom: 12px;
+}
+
+.message-text p:last-child {
+
+    margin-bottom: 0;
+}
+
+.message-text ul,
+.message-text ol {
+
+    padding-left: 22px;
+}
+
+.message-text li {
+
+    margin-bottom: 6px;
+}
+
+
+/* ============================================================
+   INPUT AREA
+============================================================ */
+
+.input-area {
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    border-top: 1px solid #e2e8f0;
+
+    background: white;
+}
+
+#questionInput {
+
+    flex: 1;
+
+    resize: none;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 12px;
+
+    padding: 13px 15px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: border 0.2s;
+}
+
+#questionInput:focus {
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            79,
+            70,
+            229,
+            0.1
+        );
+}
+
+
+/* ============================================================
+   SEND BUTTON
+============================================================ */
+
+#sendButton {
+
+    align-self: stretch;
+
+    min-width: 90px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
+}
+
+#sendButton:hover {
+
+    background: #4338ca;
+}
+
+#sendButton:active {
+
+    transform: scale(0.97);
+}
+
+#sendButton:disabled {
+
+    background: #a5b4fc;
+
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   INPUT HELP
+============================================================ */
+
+.input-help {
+
+    text-align: center;
+
+    padding: 0 20px 12px;
+
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+/* ============================================================
+   LOADING
+============================================================ */
+
+.loading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 0 28px 15px;
+
+    color: #64748b;
+}
+
+.loading.hidden {
+
+    display: none;
+}
+
+.loading span {
+
+    width: 7px;
+
+    height: 7px;
+
+    background: #4f46e5;
+
+    border-radius: 50%;
+
+    animation:
+        bounce
+        1.2s
+        infinite;
+}
+
+.loading span:nth-child(2) {
+
+    animation-delay: 0.15s;
+}
+
+.loading span:nth-child(3) {
+
+    animation-delay: 0.30s;
+}
+
+@keyframes bounce {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-6px);
+    }
+}
+
+.loading p {
+
+    margin: 0 0 0 5px;
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 10px 20px;
+
+    background: #f8fafc;
+
+    border-top: 1px solid #e2e8f0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .app-container {
+        min-height: 100vh;
+    }
+
+    .header {
+        padding: 18px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .chat-messages {
+        padding: 18px;
+    }
+
+    .ai-message .message-content,
+    .user-message .message-content {
+        max-width: 90%;
+    }
+
+    .input-area {
+        padding: 12px;
+    }
+
+    #sendButton {
+        min-width: 70px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+}

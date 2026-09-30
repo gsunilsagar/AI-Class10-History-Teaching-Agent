@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Class 10 History AI Teaching Assistant
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="header">
+
+            <div class="header-icon">
+                📚
+            </div>
+
+            <div>
+
+                <h1>
+                    Class 10 History
+                </h1>
+
+                <p>
+                    AI Teaching Assistant
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             MAIN CHAT AREA
+        ================================================== -->
+
+        <main class="chat-container">
+
+            <div
+                id="chatMessages"
+                class="chat-messages"
+            >
+
+                <!-- Initial AI message -->
+
+                <div class="message ai-message">
+
+                    <div class="avatar">
+                        AI
+                    </div>
+
+                    <div class="message-content">
+
+                        <div class="message-name">
+                            History Teacher
+                        </div>
+
+                        <div class="message-text">
+
+                            Hello! 👋
+
+                            <br><br>
+
+                            I am your Class 10 History Teaching
+                            Assistant.
+
+                            <br><br>
+
+                            You can ask me about topics such as:
+
+                            <ul>
+                                <li>
+                                    The Rise of Nationalism in Europe
+                                </li>
+
+                                <li>
+                                    Nationalism in India
+                                </li>
+
+                                <li>
+                                    The Making of a Global World
+                                </li>
+
+                                <li>
+                                    The Age of Industrialisation
+                                </li>
+
+                                <li>
+                                    Print Culture and the Modern World
+                                </li>
+                            </ul>
+
+                            Ask me a question and I will explain
+                            it step by step.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 LOADING INDICATOR
+            ================================================== -->
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <p>
+                    Teacher is thinking...
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 INPUT AREA
+            ================================================== -->
+
+            <div class="input-area">
+
+                <textarea
+                    id="questionInput"
+                    placeholder="Ask a Class 10 History question..."
+                    rows="2"
+                ></textarea>
+
+                <button
+                    id="sendButton"
+                    type="button"
+                >
+                    Send
+                </button>
+
+            </div>
+
+            <div class="input-help">
+
+                Press Enter to send • Shift + Enter for a new line
+
+            </div>
+
+        </main>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="footer">
+
+            <span>
+                Class 10 History AI Teaching Assistant
+            </span>
+
+            <span>
+                Learning through explanation
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>
