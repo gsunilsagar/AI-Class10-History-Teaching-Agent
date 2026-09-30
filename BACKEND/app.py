@@ -27,13 +27,13 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 CONTEXT_FILE = os.path.join(
     PROJECT_ROOT,
-    "context",
+    "CONTEXT",
     "history_context.md"
 )
 
 FRONTEND_FOLDER = os.path.join(
     PROJECT_ROOT,
-    "frontend"
+    "FRONTEND"
 )
 
 
